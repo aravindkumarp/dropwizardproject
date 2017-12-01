@@ -57,4 +57,13 @@ public class HelloWorldResource {
             return null;
         }
     }
+    
+    @GET
+    @Path("/hello")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String sayHello() {
+        
+            return "HELLOOO";
+        
+    }
 }
