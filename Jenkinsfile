@@ -1,38 +1,10 @@
 pipeline {
-    agent any
-   stages {
+    agent { docker 'maven:3.3.3' }
+    stages {
         stage('build') {
             steps {
-                echo "The build stage"
+                sh 'mvn --version'
             }
-        }
-         stage('test') {
-            steps {
-                echo "The test stage"
-            }
-        }
-         stage('deploy') {
-            steps {
-                echo "The deploy stage"
-            }
-        }
-    }
-    post {
-        always {
-            echo 'Stages have completed'
-        }
-        success {
-            echo 'successful run'
-        }
-        failure {
-            echo 'failed run'
-        }
-        unstable {
-            echo 'marked as unstable'
-        }
-        changed {
-            echo 'This will run only if the state of the Pipeline has changed'
-            echo 'For example, if the Pipeline was previously failing but is now successful'
         }
     }
 }
