@@ -22,10 +22,10 @@ pipeline {
             echo 'Stages have completed'
         }
         success {
-            echo 'successful'
+            echo 'successful run'
         }
         failure {
-            echo 'failed'
+            echo 'failed run'
         }
         unstable {
             echo 'marked as unstable'
